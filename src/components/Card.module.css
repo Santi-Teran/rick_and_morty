@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Misfits';
+    src: url(../fuentes/MISFITS_.TTF);
+
+}
+
+.card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 450px;
+    background-color: rgb(133, 84, 212);
+    color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 1);
+}
+
+.divTitles {
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+    border-radius: 10px;
+    font-family: 'Misfits';
+    font-size: 20px;
+}
+
+.button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: red;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.titleH2 {
+    display: flex;
+    justify-content:center;
+    margin: 0;
+    font-size: 40px;
+    font-family: 'Misfits';
+}
+
+.img {
+    position: relative;
+}

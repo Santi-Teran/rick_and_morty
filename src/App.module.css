@@ -1,0 +1,13 @@
+.App {
+   text-align: center;
+   background-image: url(./imagenes/633151.jpg);
+   background-size: cover;
+   background-position: center;
+}
+
+.div {
+   display: flex;
+   justify-content: center;
+}
+
+
