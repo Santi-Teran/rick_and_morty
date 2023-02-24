@@ -1,8 +1,10 @@
+@font-face {
+   font-family: 'rick';
+   src: url(./fuentes/get_schwifty.ttf);
+}
+
 .App {
    text-align: center;
-   background-image: url(./imagenes/633151.jpg);
-   background-size: cover;
-   background-position: center;
 }
 
 .div {
@@ -10,4 +12,13 @@
    justify-content: center;
 }
 
+.h1 {
+   display: flex;
+   justify-content: center;
+   font-family: 'rick';
+   font-size: 80px;
+   color: white;
+   margin: 0;
+   padding: 30px;
+}
 

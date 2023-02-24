@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.4);;
+    border: 4px solid white;
+    border-radius: 20px;
+}
+
+.container h2 {
+    font-size: 40px;
+    color: #FAFD7CFF;
+}
+
+.container p {
+    font-size: 20px;
+    color: #FAFD7CFF;
+}
+
+.container h3 {
+    font-size: 30px;
+    color: #FAFD7CFF;
+}
+
+.container img{
+    width: 200px;
+    height: 200px;
+}
+  
+@media only screen and (max-width: 605px) {
+    .container h2 {
+        font-size: 34px;
+    }
+    .container p {
+        font-size: 14px;
+    }
+    .container h3 {
+        font-size: 24px;
+    }
+    .container img {
+        width: 100px;
+        height: 100px;
+    }
+}
