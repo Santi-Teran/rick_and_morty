@@ -25,11 +25,11 @@ export default function Detail(props) {
   return (
     <div className={style.container}>
       <div className={style.div}>
-      <h1>{detail.name}</h1>
-      <p>STATUS: {detail.status}</p>
-      <p>SPECIES: {detail.species}</p>
-      <p>GENDER: {detail.gender}</p>
-      <p>ORIGIN: {detail.origin?.name}</p>
+        <h1>{detail.name}</h1>
+        <p>STATUS: {detail.status}</p>
+        <p>SPECIES: {detail.species}</p>
+        <p>GENDER: {detail.gender}</p>
+        <p>ORIGIN: {detail.origin?.name}</p>
       </div>
       <img src={detail.image} alt={detail.name} />
     </div>

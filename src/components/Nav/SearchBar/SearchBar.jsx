@@ -12,7 +12,6 @@ export default function SearchBar(props) {
      const{value} = event.target;
      setCharacter(value);
    }
-   
 
    function handleClick() {
       const newCharacter = {
@@ -25,9 +24,6 @@ export default function SearchBar(props) {
    return (
       <div className={style.div}>
          <ul className={style.menu}>
-            <li>
-               <h1>Rick and Morty Cards</h1>
-            </li>
             <div className={style.options}>
                <div className={style.home}>
                   <li>
@@ -35,6 +31,11 @@ export default function SearchBar(props) {
                   </li>
                   <li>
                      <button className={style.buttonAbout}><NavLink to="/about" className={style.navLink}>About</NavLink></button>
+                  </li>
+               </div>
+               <div className={style.divH1}>
+                  <li>
+                     <h1>Rick and Morty Cards</h1>
                   </li>
                </div>
                <div className={style.add}>
