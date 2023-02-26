@@ -1,12 +1,16 @@
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import VideoBackground from './components/Background Video/video.jsx'
 import Nav from './components/Nav/Nav.jsx'
+import Form from './components/Form/Form.jsx';
 import Cards from './components/Cards/Cards.jsx'
 import Detail from './components/Detail/Detail.jsx'
 import About from './components/About/About.jsx'
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 
 function App () {
+
+  const location = useLocation();
+
   const [characters, setCharacters] = useState([]);
 
   function onSearch(character) {
@@ -45,12 +49,31 @@ function App () {
     setCharacters(characters.filter(char => char.id !== id))
   }
 
+  const navigate = useNavigate();
+  const [access, setAccess] = useState(false);
+  const username = 'santiagoteranmatias@gmail.com';
+  const password = 'ediporey05';
+
+  function login(userData) {
+    if (userData.password === password && userData.username === username) {
+      setAccess(true);
+      navigate('/home');
+    }
+  }
+
+  useEffect(() => {
+    // eslint-disable-next-line
+    !access && navigate('/');
+    // eslint-disable-next-line
+  }, [access]);
+
   return (
     <div>
       <VideoBackground/>
-      <Nav onSearch={onSearch} AddRandom={AddRandom}/>
+      {access && location.pathname !== '/' && <Nav onSearch={onSearch} AddRandom={AddRandom}/>}
       <Routes>
-        <Route path="/" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path="/" element={<Form login={login}/>}/>
+        <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
       </Routes>

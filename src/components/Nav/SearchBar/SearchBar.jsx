@@ -27,7 +27,7 @@ export default function SearchBar(props) {
             <div className={style.options}>
                <div className={style.home}>
                   <li>
-                     <button className={style.buttonHome}><NavLink to="/" exact className={style.navLink}>Home</NavLink></button>
+                     <button className={style.buttonHome}> <NavLink to="/home" exact className={style.navLink}>Home</NavLink></button>
                   </li>
                   <li>
                      <button className={style.buttonAbout}><NavLink to="/about" className={style.navLink}>About</NavLink></button>
@@ -40,13 +40,13 @@ export default function SearchBar(props) {
                </div>
                <div className={style.add}>
                   <li>
+                     <button className={style.buttonRandom} onClick={props.AddRandom}>Random</button>
+                  </li>
+                  <li>
                      <input placeholder='ID del personaje' type='search' name='search' id='search' onChange={handleChange}/>
                   </li>
                   <li>
-                     <button className={style.buttonAdd} onClick={handleClick}>Agregar</button>
-                  </li>
-                  <li>
-                     <button className={style.buttonRandom} onClick={props.AddRandom}>Random</button>
+                     <button className={style.buttonAdd} onClick={handleClick}>Add</button>
                   </li>
                </div>
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Form, useParams, NavLink } from 'react-router-dom';
 import style from './Detail.module.css'
 
 export default function Detail(props) {
@@ -24,6 +24,9 @@ export default function Detail(props) {
 
   return (
     <div className={style.container}>
+      <div className={style.buttonContainer}>
+        <button> <NavLink to="/home" exact className={style.navLink}>Back</NavLink></button>
+      </div>
       <div className={style.div}>
         <h1>{detail.name}</h1>
         <p>STATUS: {detail.status}</p>
