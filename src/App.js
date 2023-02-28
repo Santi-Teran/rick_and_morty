@@ -10,11 +10,13 @@ import { Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 function App () {
 
   const location = useLocation();
-
   const [characters, setCharacters] = useState([]);
+  const [access, setAccess] = useState(false);
+  const username = 'username@gmail.com';
+  const password = 'ejemplo1';
+  const navigate = useNavigate();
 
-  function onSearch(character) {
-  
+  const onSearch = (character) => {
     fetch(`https://rickandmortyapi.com/api/character/${character.name}`)
        .then((response) => response.json())
        .then((data) => {
@@ -31,9 +33,8 @@ function App () {
        });
   }
 
-  function AddRandom() {
+  const AddRandom = () => {
     const randomID = Math.floor(Math.random() * 826) + 1;
-
     fetch(`https://rickandmortyapi.com/api/character/${randomID}`)
       .then((response) => response.json())
       .then((data) => {
@@ -49,28 +50,27 @@ function App () {
     setCharacters(characters.filter(char => char.id !== id))
   }
 
-  const navigate = useNavigate();
-  const [access, setAccess] = useState(false);
-  const username = 'santiagoteranmatias@gmail.com';
-  const password = 'ediporey05';
-
-  function login(userData) {
+  const login = (userData) => {
     if (userData.password === password && userData.username === username) {
       setAccess(true);
       navigate('/home');
     }
   }
 
+  const logout = () => {
+    setAccess(false);
+    navigate('/');
+  }
+
   useEffect(() => {
-    // eslint-disable-next-line
     !access && navigate('/');
     // eslint-disable-next-line
-  }, [access]);
+ }, [access]);
 
   return (
     <div>
       <VideoBackground/>
-      {access && location.pathname !== '/' && <Nav onSearch={onSearch} AddRandom={AddRandom}/>}
+      {location.pathname !== '/' && <Nav onSearch={onSearch} AddRandom={AddRandom} logout={logout}/>}
       <Routes>
         <Route path="/" element={<Form login={login}/>}/>
         <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />

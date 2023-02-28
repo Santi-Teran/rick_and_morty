@@ -1,4 +1,4 @@
-import video from '../../videos/nebulosa.mp4';
+import video from '../../videos/stars.mp4';
 import videoStyle from '../Background Video/video.module.css'
 
 function VideoBackground() {

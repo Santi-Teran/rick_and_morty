@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import style from './SearchBar.module.css'
 import { NavLink } from 'react-router-dom';
 
@@ -20,6 +20,10 @@ export default function SearchBar(props) {
       props.onSearch(newCharacter);
       setCharacter("");
    }
+
+   function handleLogout() {
+      props.logout();
+   }
    
    return (
       <div className={style.div}>
@@ -27,10 +31,13 @@ export default function SearchBar(props) {
             <div className={style.options}>
                <div className={style.home}>
                   <li>
-                     <button className={style.buttonHome}> <NavLink to="/home" exact className={style.navLink}>Home</NavLink></button>
+                     <button> <NavLink to="/home" exact className={style.navLink}>Home</NavLink></button>
                   </li>
                   <li>
-                     <button className={style.buttonAbout}><NavLink to="/about" className={style.navLink}>About</NavLink></button>
+                     <button><NavLink to="/about" className={style.navLink}>About</NavLink></button>
+                  </li>
+                  <li>
+                     <button onClick={handleLogout}>Logout</button>
                   </li>
                </div>
                <div className={style.divH1}>

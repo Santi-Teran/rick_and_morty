@@ -26,8 +26,8 @@
 }
 
 .menu li h1 {
-  font-size: 50px;
-  font-family: 'Rick';
+  font-size: 60px;
+  font-family: 'Misfits';
   text-align: center;
   color: #218fbb;
   margin: 0;
@@ -101,6 +101,9 @@
 }
 
 @media only screen and (max-width: 1280px) {
+  .menu li h1 {
+    font-size: 50px;
+  }
   .options li button {
     width: 100px;
   }

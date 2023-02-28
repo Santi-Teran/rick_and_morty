@@ -1,55 +1,56 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { validate } from './validation.js';
 import style from './Form.module.css'
 
-export default function Form({login}) {
+export default function Form(props) {
+
   const [userData, setUserData] = useState({
+    username: '',
+    password: ''
+  })
+  const [errors, setErrors] = useState({
     username: '',
     password: ''
   });
 
-  const [errors, setErrors] = useState({});
-
   const handleChange = (e) => {
-    setUserData({
-      ...userData,
-      [e.target.name]: e.target.value,
-    });
-    setErrors(validate(userData));
-};
+    const { name, value } = e.target; 
+    setUserData({...userData, [name]: value})
 
-const handleSubmit = (e) => {
-    e.preventDefault();
-    const userData = {
-      username: e.target.username.value,
-      password: e.target.password.value
-    };
-    login(userData);
+    setErrors(validate({...userData, [name]: value}))
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    props.login(userData)
   }
 
   return (
-      <form className={style.div} onSubmit={handleSubmit}>
-        <h1>Rick and Morty Cards</h1>
+    <div className={style.container}>
+      <h1>Rick and Morty Cards</h1>
+      <form className={style.form} onSubmit={handleSubmit}>
+        <label>Username</label>
         <input 
-            className={errors.username ? 'danger': ''}
-            name="username" 
-            value={userData.username} 
-            placeholder="Username" 
-            onChange={handleChange} 
+          name="username"
+          type="text"
+          value={userData.username}
+          onChange={handleChange}
+          className={errors.username && 'danger'}
         />
-        {errors.username && <span className={style.errors}>{errors.username}</span>}
-        
+        <span className={style.errors}>{errors.username && errors.username}</span>
+
+        <label>Password</label>  
         <input
-            className={errors.password ? 'danger': ''}
-            name="password" 
-            value={userData.password} 
-            placeholder="Password" 
-            type="password" 
-            onChange={handleChange}
+          name="password"
+          type="password" 
+          value={userData.password} 
+          onChange={handleChange}
+          className={errors.password && 'danger'}
         />
-        {errors.password && <span className={style.errors}>{errors.password}</span>}
+        <span className={style.errors}>{errors.password && errors.password}</span>
         
         <button type="submit">Log In</button>
       </form>
-    );
+    </div>
+  );
 }
