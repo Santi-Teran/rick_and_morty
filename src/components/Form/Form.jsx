@@ -50,6 +50,8 @@ export default function Form(props) {
         <span className={style.errors}>{errors.password && errors.password}</span>
         
         <button type="submit">Log In</button>
+        <p>mail: username@gmail.com</p>
+        <p>password: ejemplo1</p>
       </form>
     </div>
   );

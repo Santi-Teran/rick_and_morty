@@ -72,10 +72,10 @@ function App () {
   return (
     <div>
       <VideoBackground/>
-      {location.pathname !== '/' && <Nav onSearch={onSearch} AddRandom={AddRandom} logout={logout}/>}
+      {location.pathname !== '/' && <Nav logout={logout}/>}
       <Routes>
         <Route path="/" element={<Form login={login}/>}/>
-        <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path="/home" element={<Cards onSearch={onSearch} AddRandom={AddRandom} characters={characters} onClose={onClose} />} />
         <Route path="/favorites" element={<Favorites />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />

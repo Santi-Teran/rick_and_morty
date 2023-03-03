@@ -15,12 +15,12 @@ export default function SearchBar(props) {
         name: character,
       };  
       props.onSearch(newCharacter);
-      setCharacter("");
+      setCharacter('');
    }
    
    return (
       <div className={style.container}>
-         <input className={style.button} placeholder='ID del personaje' type='search' name='search' id='search' onChange={handleChange}/>
+         <input className={style.button} value={character} placeholder='ID del personaje' type='search' name='search' id='search' onChange={handleChange}/>
          <button className={style.button} onClick={handleClick}>Add</button>
          <button className={style.button} onClick={props.AddRandom}>Random</button>
       </div>
