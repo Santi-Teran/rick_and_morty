@@ -5,6 +5,8 @@ import Form from './components/Form/Form.jsx';
 import Cards from './components/Cards/Cards.jsx'
 import Detail from './components/Detail/Detail.jsx'
 import About from './components/About/About.jsx'
+import Favorites from './components/Favorites/Favorites.jsx'
+import Portfolio from './components/Portfolio/Portfolio.jsx'
 import { Routes, Route, useLocation, useNavigate} from 'react-router-dom';
 
 function App () {
@@ -74,8 +76,10 @@ function App () {
       <Routes>
         <Route path="/" element={<Form login={login}/>}/>
         <Route path="/home" element={<Cards characters={characters} onClose={onClose} />} />
+        <Route path="/favorites" element={<Favorites />} />
         <Route path="/about" element={<About />} />
         <Route path="/detail/:id" element={<Detail />} />
+        <Route path= "/portfolio" element={<Portfolio />} />
       </Routes>
     </div>
   )

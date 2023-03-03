@@ -1,0 +1,68 @@
+@font-face {
+    font-family: 'Ubuntu';
+    src: url(../../fuentes/Ubuntu-Regular.ttf);
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+  }
+  
+.navLinksContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+}
+  
+.navLink {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 30px;
+    border: 2px solid rgb(0, 119, 119);
+}
+  
+.navLink:hover {
+    background-color: rgb(0, 119, 119, 0.8);
+    transition: background-color 0.4s ease-in-out;
+}
+  
+@media screen and (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navLinksContainer {
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+  
+    .navLink {
+      margin: 5px;
+      padding: 8px 15px;
+    }
+}
+
+@media (max-width: 510px) {
+    .navLinksContainer {
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+  
+    .navLink {
+      margin: 5px;
+    }
+}
+
+  
+  
+  
+  
+  

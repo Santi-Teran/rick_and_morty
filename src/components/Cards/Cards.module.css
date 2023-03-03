@@ -2,8 +2,8 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-  }
+}
 
 .card {
     flex-basis: calc(25%);
-  }
+}

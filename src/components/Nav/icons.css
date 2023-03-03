@@ -1,0 +1,32 @@
+.icono-logout {
+    /* Agregamos un margen a la derecha para separar el icono del texto */
+    margin-right: 5px;
+  }
+  
+  /* Definimos el icono y ocultamos el texto en pantallas pequeñas */
+  .icono-logout::before {
+    content: url('../../fuentes/iconos/cerrar-sesion.svg');
+  }
+  
+  @media (max-width: 960px) {
+    /* Establecemos el ancho máximo para el contenedor de enlaces */
+    .navLinksContainer {
+      max-width: 500px;
+    }
+  
+    /* Ocultamos el texto de los enlaces y ajustamos el margen */
+    .navLink {
+      font-size: 0;
+      margin-right: 10px;
+    }
+  
+    /* Mostramos el texto solo si el enlace está activo */
+    .navLink.active {
+      font-size: 16px;
+    }
+  
+    /* Mostramos el icono en lugar del texto */
+    .icono-logout::before {
+      content: url('../../fuentes/iconos/cerrar-sesion.svg');
+    }
+  }

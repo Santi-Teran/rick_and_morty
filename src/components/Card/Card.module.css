@@ -8,22 +8,21 @@
     height: auto;
     padding: 20px;
     margin: 40px;
-    background-color: rgb(0, 56, 56);
-    border: 2px solid rgb(0, 0, 0);
+    background-color: rgb(0, 56, 56, 0.5);
+    border: 2px solid rgb(0, 56, 56);
     border-radius: 10px;
-    font-family: 'Misfits';
+    font-family: 'Ubuntu';
     letter-spacing: 2px;
     color: #218fbb;
-    -webkit-text-stroke: 1px #00FF00;
+    -webkit-text-stroke: 0.1px #00FF00;
 }
 .container img {
     border-radius: 10px;
-    border: 2px solid black;
 }
 
 .buttonContainer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;    
 }   
 .buttonContainer button {
     height: 40px;
@@ -35,12 +34,9 @@
     font-size: 20px;
     cursor: pointer;
 }
-.buttonContainer button:hover {
-    background-color: rgb(0, 30, 30);
-}
     
 .container h2 {
-    height: 72px;
+    height: auto;
     text-align: center;
     margin: 10px;
     font-size: 34px;
@@ -72,10 +68,10 @@
     background-color: rgba(255, 255, 255, 0);
     cursor: pointer;
     border-radius: 40px;
-    font-family: 'Misfits';
-    letter-spacing: 2px;
+    font-family: 'Ubuntu';
+    letter-spacing: 1px;
     color: #218fbb;
-    -webkit-text-stroke: 1px #00FF00;
+    -webkit-text-stroke: 0.5px #00FF00;
 }
 .Link button:hover {
     background-color: rgb(0, 30, 30);
