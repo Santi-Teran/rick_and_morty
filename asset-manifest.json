@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/santi-teran.io/static/css/main.d1266082.css",
-    "main.js": "/santi-teran.io/static/js/main.5a26c7a3.js",
-    "static/media/stars.mp4": "/santi-teran.io/static/media/stars.364dfb3c62db8da98b4a.mp4",
-    "static/media/Ubuntu-Regular.ttf": "/santi-teran.io/static/media/Ubuntu-Regular.1cbb1b79a23478cc89ad.ttf",
-    "static/media/fotoPerfil.png": "/santi-teran.io/static/media/fotoPerfil.9d1c7f9cf130aa4281a1.png",
-    "index.html": "/santi-teran.io/index.html",
-    "main.d1266082.css.map": "/santi-teran.io/static/css/main.d1266082.css.map",
-    "main.5a26c7a3.js.map": "/santi-teran.io/static/js/main.5a26c7a3.js.map"
+    "main.css": "/rick_and_morty/static/css/main.687b5859.css",
+    "main.js": "/rick_and_morty/static/js/main.0a43d1eb.js",
+    "static/media/stars.mp4": "/rick_and_morty/static/media/stars.364dfb3c62db8da98b4a.mp4",
+    "static/media/Ubuntu-Regular.ttf": "/rick_and_morty/static/media/Ubuntu-Regular.1cbb1b79a23478cc89ad.ttf",
+    "static/media/fotoPerfil.png": "/rick_and_morty/static/media/fotoPerfil.9d1c7f9cf130aa4281a1.png",
+    "index.html": "/rick_and_morty/index.html",
+    "main.687b5859.css.map": "/rick_and_morty/static/css/main.687b5859.css.map",
+    "main.0a43d1eb.js.map": "/rick_and_morty/static/js/main.0a43d1eb.js.map"
   },
   "entrypoints": [
-    "static/css/main.d1266082.css",
-    "static/js/main.5a26c7a3.js"
+    "static/css/main.687b5859.css",
+    "static/js/main.0a43d1eb.js"
   ]
 }
