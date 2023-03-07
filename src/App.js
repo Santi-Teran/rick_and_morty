@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react';
-import VideoBackground from './components/Background Video/video.jsx'
 import Nav from './components/Nav/Nav.jsx'
 import Form from './components/Form/Form.jsx';
 import Cards from './components/Cards/Cards.jsx'

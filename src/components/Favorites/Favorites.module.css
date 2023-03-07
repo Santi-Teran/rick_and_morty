@@ -23,3 +23,20 @@
 .card {
     flex-basis: calc(25%);
 }
+
+.button {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #ffffff00;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border-radius: 30px;
+    border: 2px solid rgb(85, 0, 119);
+  }
+  
+  .button:hover {
+    background-color: rgb(85, 0, 119, 0.8);
+    transition: background-color 0.4s ease-in-out;
+}

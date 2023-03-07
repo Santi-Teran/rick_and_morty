@@ -20,30 +20,27 @@ const reducer = (state = initialState, action) => {
                 myFavorites: state.myFavorites.filter(card => card.id !== payload)
             }
         case FILTER:
-            const { genre } = action.payload;
-            const allCharacters = state.allCharacters.filter((character) => character.gender === genre)
-            const myFavorites = state.myFavorites.filter((character) => character.gender === genre)
+            var { allCharacters } = state;
+            const filteredFavorites = action.payload === 'all'
+                ? allCharacters
+                : allCharacters.filter((character) => character.gender === action.payload);
             return {
                 ...state,
-                myFavorites,
-                allCharacters,    
-            }
+                myFavorites: [...filteredFavorites],
+            };
         case ORDER:
-            const { order } = action.payload;
-            const allCharactersCopy = [...state.allCharacters];
-            const myFavoritesCopy = [...state.myFavorites];
-
-            if (order === "Ascendente") {
-                allCharactersCopy.sort((a, b) => a.id - b.id);
-                myFavoritesCopy.sort((a, b) => a.id - b.id);
-            } else if (order === "Descendente") {
-                allCharactersCopy.sort((a, b) => b.id - a.id);
-                myFavoritesCopy.sort((a, b) => b.id - a.id);
-            }
+            var { allCharacters } = state;
+            const orderedFavorites = [...allCharacters].sort((a, b) => {
+                if (action.payload === "Ascendente") {
+                    return a.id - b.id;
+                } else if (action.payload === "Descendente") {
+                    return b.id - a.id;
+                }
+                return 0;
+             });
             return {
                 ...state,
-                myFavorites: myFavoritesCopy,
-                allCharacters: allCharactersCopy,
+                myFavorites: orderedFavorites,
             };
         default:
             return state
