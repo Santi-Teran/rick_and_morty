@@ -71,7 +71,6 @@ function App () {
 
   return (
     <div>
-      <VideoBackground/>
       {location.pathname !== '/' && <Nav logout={logout}/>}
       <Routes>
         <Route path="/" element={<Form login={login}/>}/>
