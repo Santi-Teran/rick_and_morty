@@ -18,7 +18,7 @@ function App () {
   const navigate = useNavigate();
 
   const onSearch = (character) => {
-    fetch(`https://rickandmortyapi.com/api/character/${character.name}`)
+    fetch(`http://localhost:3001/rickandmorty/${character.name}`)
        .then((response) => response.json())
        .then((data) => {
           if (data.name) {
