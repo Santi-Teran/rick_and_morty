@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h1 {
+    font-size: 60px;
+    font-family: 'Ubuntu';
+    text-align: center;
+    color: #218fbb;
+    margin: 0;
+    -webkit-text-stroke: 1px #00FF00;
+    letter-spacing: 1px;
+}
+  
+.portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -1,0 +1,46 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 50px;
+    padding: 20px;
+    font-family: 'Ubuntu';
+    color: #218fbb;
+    background-color: rgba(0, 56, 56, 0.8);
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.container h2 {
+    font-size: 40px;
+}
+
+.container p {
+    font-size: 20px;
+}
+
+.container h3 {
+    font-size: 30px;
+}
+
+.container img{
+    width: 200px;
+    height: 200px;
+}
+  
+@media only screen and (max-width: 605px) {
+    .container h2 {
+        font-size: 34px;
+    }
+    .container p {
+        font-size: 14px;
+    }
+    .container h3 {
+        font-size: 24px;
+    }
+    .container img {
+        width: 100px;
+        height: 100px;
+    }
+}
