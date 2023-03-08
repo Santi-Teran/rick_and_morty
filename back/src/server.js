@@ -1,9 +1,7 @@
 import http from "http";
-import data from './utils/data'
+import characters from './utils/data.js';
 
 const PORT = 3001;
-
-module.exports =
 
 http.createServer((req, res) => {
 
@@ -11,13 +9,11 @@ http.createServer((req, res) => {
   
     if (req.url.includes('rickandmorty/character')) {
   
-        const characterId = req.url.split('/')[2];
-        const character = data.find((character) => character.id === characterId);
-  
-        if (character) {
-            res.setHeader('Content-Type', 'application/json');
-            res.end(JSON.stringify(character));
-        }
+        const id = req.url.split('/').pop();
+        const character = characters.filter((char) => char.id === Number(id));
+
+        res.writeHead(200, { 'Content-Type' : 'aplicattion-json'});
+        res.end(JSON.stringify(character[0]));
     }
 }).listen(PORT, 'localhost');
   
