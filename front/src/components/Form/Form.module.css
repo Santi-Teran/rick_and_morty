@@ -84,7 +84,7 @@
         padding: 40px;
     }
     .container h1 {
-        font-size: 60px;
+        font-size: 40px;
         -webkit-text-stroke: 1px #00FF00;
     }
 
@@ -92,10 +92,14 @@
         width: 50%;
     }
     .form input {
-        width: 60%;
+        width: 80%;
         font-size: 14px;
+    }
+    .form p {
+        font-size: 12px;
     }
     .errors {
         font-size: 12px;
     }
+
 }

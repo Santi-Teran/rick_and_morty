@@ -7,3 +7,10 @@
 .card {
     flex-basis: calc(25%);
 }
+
+@media(max-width: 820px) {
+    .cards {
+        position: absolute;
+        top: 450px;
+    }
+}
