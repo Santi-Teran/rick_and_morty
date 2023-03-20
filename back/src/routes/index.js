@@ -7,14 +7,14 @@ import deleteFav from "../controllers/deleteFavs.js";
 
 const router = Router();
 
-router.get('/onsearch:id', getCharById);
+router.get('/onsearch/:id', getCharById);
 
-router.get('/detail:id', getCharDetail);
+router.get('/detail/:id', getCharDetail);
 
-router.get('/rickandmorty/fav', getFav);
+router.get('/favorites', getFav);
 
-router.post('/rickandmorty/fav', postFav);
+router.post('/favorites', postFav);
 
-router.delete('/rickandmorty/fav:id', deleteFav);
+router.delete('/favorites/:id', deleteFav);
 
 export default router;
