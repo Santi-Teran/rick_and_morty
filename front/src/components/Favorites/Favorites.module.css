@@ -7,6 +7,7 @@
 .container h1 {
     font-size: 60px;
     font-family: 'Ubuntu';
+    padding: 20px;
     text-align: center;
     color: #218fbb;
     margin: 0;

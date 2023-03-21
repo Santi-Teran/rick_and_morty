@@ -65,7 +65,7 @@
     overflow: hidden;
 }
 .dropDownMenu.open {
-    height: 240px;
+    height: 210px;
 }
 .navMenu {
     font-family: 'Ubuntu', sans-serif;
@@ -83,6 +83,7 @@
 @media(max-width: 820px) {
     .navLinksContainer {
         display: none;
+        width: 100%;
     }
     .toggle {
         display: block;

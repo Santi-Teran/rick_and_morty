@@ -5,9 +5,13 @@ import Card from '../Card/Card';
 import { filterCards, orderCards } from '../../redux/action';
 
 
-export function Favorites({ myFavorites, props }) {
+export function Favorites({ filteredFavorites, props }) {
 
   const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(filterCards('all'));
+  }, [dispatch]);
 
   const handleOrder = (e) => {
     dispatch(orderCards(e.target.value))
@@ -34,7 +38,7 @@ export function Favorites({ myFavorites, props }) {
         </select>
       </div>
       <div className={style.cards}>
-        {myFavorites.map((character) => (
+        {filteredFavorites.map((character) => (
           <Card className={style.card}
                key={character.id}
                id= {character.id} 
@@ -52,7 +56,7 @@ export function Favorites({ myFavorites, props }) {
 
 const mapStateToProps = (state) => {
   return {
-    myFavorites: state.myFavorites,
+    filteredFavorites: state.filteredFavorites,
   };
 };
 

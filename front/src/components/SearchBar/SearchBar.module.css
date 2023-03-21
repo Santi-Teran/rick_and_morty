@@ -26,13 +26,6 @@
   transition: background-color 0.4s ease-in-out;
 }
 
-@media(max-width: 820px) {
-  .container {
-    position: absolute;
-    top: 300px;
-  }
-}
-
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;

@@ -3,6 +3,7 @@ import { ADD_CARD, DELETE_CARD, FILTER, ORDER, GET_FAVORITES, ADD_FAVORITES, DEL
   const initialState = {
     myFavorites: [],
     allCharacters: [],
+    filteredFavorites: [],
   };
   
   const reducer = (state = initialState, action) => {
@@ -16,38 +17,13 @@ import { ADD_CARD, DELETE_CARD, FILTER, ORDER, GET_FAVORITES, ADD_FAVORITES, DEL
       case DELETE_CARD:
         return {
           ...state,
-          allCharacters: state.allCharacters.filter(
-            (card) => card.id !== payload
-          ),
+          allCharacters: state.allCharacters.filter((card) => card.id !== payload),
         };
-      case FILTER:
-        const filteredFavorites =
-          action.payload === "all"
-            ? state.allCharacters
-            : state.allCharacters.filter(
-                (character) => character.gender === action.payload
-              );
-        return {
-          ...state,
-          myFavorites: [...filteredFavorites],
-        };
-      case ORDER:
-        const orderedFavorites = [...state.allCharacters].sort((a, b) => {
-          if (action.payload === "Ascendente") {
-            return a.id - b.id;
-          } else if (action.payload === "Descendente") {
-            return b.id - a.id;
-          }
-          return 0;
-        });
-        return {
-          ...state,
-          myFavorites: orderedFavorites,
-        };
-      case GET_FAVORITES:
+        case GET_FAVORITES:
         return {
           ...state,
           myFavorites: payload,
+          filteredFavorites: payload,
         };
       case ADD_FAVORITES:
         return {
@@ -58,6 +34,32 @@ import { ADD_CARD, DELETE_CARD, FILTER, ORDER, GET_FAVORITES, ADD_FAVORITES, DEL
         return {
           ...state,
           myFavorites: state.myFavorites.filter((card) => card.id !== payload),
+        };
+        case FILTER:
+          let filteredFavorites;
+      if (action.payload === "all") {
+        filteredFavorites = [...state.myFavorites]; // Restaura el array original de favoritos
+      } else {
+        filteredFavorites = state.myFavorites.filter((character) => {
+          return character.gender === action.payload;
+        });
+      }
+      return {
+        ...state,
+        filteredFavorites: filteredFavorites,
+      };
+      case ORDER:
+        const orderedFavorites = [...state.filteredFavorites].sort((a, b) => {
+          if (action.payload === "Ascendente") {
+            return a.id - b.id;
+          } else if (action.payload === "Descendente") {
+            return b.id - a.id;
+          }
+          return 0;
+        });
+        return {
+          ...state,
+          filteredFavorites: orderedFavorites,
         };
       default:
         return state;

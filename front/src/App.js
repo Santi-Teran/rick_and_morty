@@ -18,7 +18,7 @@ function App () {
   const navigate = useNavigate();
 
   const onSearch = (character) => {
-    fetch(`http://localhost:3001/rickandmorty/onsearch/${character.name}`)
+    fetch(`http://localhost:3001/rickandmorty/onsearch/${character.id}`)
        .then((response) => response.json())
        .then((data) => {
           if (data.name) {
@@ -36,7 +36,7 @@ function App () {
 
   const AddRandom = () => {
     const randomID = Math.floor(Math.random() * 826) + 1;
-    fetch(`https://rickandmortyapi.com/api/character/${randomID}`)
+    fetch(`http://localhost:3001/rickandmorty/onsearch/${randomID}`)
       .then((response) => response.json())
       .then((data) => {
          if (data.name) {

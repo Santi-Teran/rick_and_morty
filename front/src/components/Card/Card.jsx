@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { addCard, deleteCard } from '../../redux/action.js';
+import { addFavorites, deleteFavorites } from '../../redux/action.js';
 import style from './Card.module.css';
 
 
@@ -20,10 +20,10 @@ export function Card(props) {
    const handleFavorite = () => {
       if (isFav) {
          setIsFav(false);
-         props.deleteCard(props.id);
+         props.deleteFavorites(props.id);
       } else {
          setIsFav(true);
-         props.addCard({ ...props });
+         props.addFavorites({ ...props });
       }
    }
    return (
@@ -56,8 +56,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
    return {
-      addCard: (character) => dispatch(addCard(character)),
-      deleteCard: (id) => dispatch(deleteCard(id))
+      addFavorites: (character) => dispatch(addFavorites(character)),
+      deleteFavorites: (id) => dispatch(deleteFavorites(id))
    }
 }
 

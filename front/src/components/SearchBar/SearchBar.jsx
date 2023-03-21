@@ -12,7 +12,7 @@ export default function SearchBar(props) {
 
    function handleClick() {
       const newCharacter = {
-        name: character,
+        id: character,
       };  
       props.onSearch(newCharacter);
       setCharacter('');
