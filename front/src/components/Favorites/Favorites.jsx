@@ -23,7 +23,6 @@ export function Favorites({ filteredFavorites, props }) {
 
   return (
     <div className={style.container}>
-      <h1>My Favorites</h1>
       <div>
         <select className={style.button} onChange={handleOrder}>
           <option value="Ascendente">Ascendente</option>

@@ -3,17 +3,6 @@
     flex-direction: column;
     align-items: center;
 }
-
-.container h1 {
-    font-size: 60px;
-    font-family: 'Ubuntu';
-    padding: 20px;
-    text-align: center;
-    color: #218fbb;
-    margin: 0;
-    -webkit-text-stroke: 1px #00FF00;
-    letter-spacing: 1px;
-}
   
 .cards {
     display: flex;
@@ -32,12 +21,12 @@
     background-color: #ffffff00;
     text-decoration: none;
     padding: 10px 20px;
-    margin: 0 10px;
+    margin: 20px 10px;
     border-radius: 30px;
-    border: 2px solid rgb(85, 0, 119);
+    border: 2px solid rgb(0, 119, 119);
   }
   
   .button:hover {
-    background-color: rgb(85, 0, 119, 0.8);
+    background-color: rgb(0, 119, 119, 0.8);
     transition: background-color 0.4s ease-in-out;
 }

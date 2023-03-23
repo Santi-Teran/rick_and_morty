@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Rick;
+  src: url('./fuentes/SHLOP___.ttf');
+}
 body {
   background-image: url(./imagenes/stars.png);
   background-size: cover;
@@ -7,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
