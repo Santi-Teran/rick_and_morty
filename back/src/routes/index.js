@@ -4,6 +4,7 @@ import getCharDetail from "../controllers/getCharDetail.js";
 import getFav from "../controllers/getFav.js";
 import postFav from "../controllers/postFav.js";
 import deleteFav from "../controllers/deleteFavs.js";
+import getAllCharacters from "../controllers/getAllCharacters.js";
 
 const router = Router();
 
@@ -16,5 +17,7 @@ router.get('/favorites', getFav);
 router.post('/favorites', postFav);
 
 router.delete('/favorites/:id', deleteFav);
+
+router.get('/all', getAllCharacters);
 
 export default router;

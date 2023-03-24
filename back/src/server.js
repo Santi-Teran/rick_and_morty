@@ -2,20 +2,27 @@ import express from 'express';
 import cors from 'cors';
 import morgan from 'morgan';
 import router from './routes/index.js';
-
+import sequelize from './DB_connection.js';
+import saveApiData from './controllers/saveApiData.js';
 
 const server = express();
 const PORT = 3001;
-
 
 server.use(express.json());
 server.use(cors());
 server.use(morgan('dev'));
 server.use('/rickandmorty', router);
 
-server.listen(PORT, () => {
-    console.log('Server raised in port ' + PORT)
-});
+async function startServer() {
+  await sequelize.sequelize.sync({ force: true });
+  await saveApiData();
+
+  server.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`);
+  });
+}
+
+startServer();
 
 // import http from "http";
 // import getCharById from "./controllers/getCharById.js";
